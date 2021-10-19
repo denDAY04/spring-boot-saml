@@ -1,0 +1,31 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.5'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+    id 'groovy'
+}
+
+group = 'dk.asj'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+
+	//testImplementation 'org.spockframework.spock:spock-core:spock-2.0-groovy-3.0'
+    implementation 'org.spockframework:spock-core:2.0-groovy-3.0'
+	//testImplementation 'org.spockframework.spock:spock-spring:spock-2.0'
+    implementation 'org.spockframework:spock-spring:2.0-groovy-3.0'
+}
+
+test {
+	useJUnitPlatform()
+}
