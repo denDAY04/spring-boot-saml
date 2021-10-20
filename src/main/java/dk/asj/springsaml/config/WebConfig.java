@@ -1,7 +1,7 @@
 package dk.asj.springsaml.config;
 
-import org.springframework.web.reactive.config.EnableWebFlux;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-@EnableWebFlux
+@EnableWebMvc
 public class WebConfig {
 }
