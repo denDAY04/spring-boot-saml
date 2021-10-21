@@ -17,3 +17,8 @@ tab_width = 2
 indent_size = 2
 insert_final_newline = true
 tab_width = 2
+
+[*.yml]
+indent_size = 2
+insert_final_newline = true
+tab_width = 2

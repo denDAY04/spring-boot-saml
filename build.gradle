@@ -16,13 +16,25 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
 
-	//testImplementation 'org.spockframework.spock:spock-core:spock-2.0-groovy-3.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+
+    // For SAML2.0 middleware
+    implementation 'org.springframework.security:spring-security-saml2-service-provider:5.5.3'
+
+    // 5.5.3 since 5.5.2 requires {registrationId} path fragment in custom SAML2 login processing url
+    implementation 'org.springframework.security:spring-security-config:5.5.3'
+    implementation 'org.springframework.security:spring-security-web:5.5.3'
+
     implementation 'org.spockframework:spock-core:2.0-groovy-3.0'
-	//testImplementation 'org.spockframework.spock:spock-spring:spock-2.0'
     implementation 'org.spockframework:spock-spring:2.0-groovy-3.0'
+
+    // logging
+    implementation 'ch.qos.logback:logback-core:1.2.6'
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    testImplementation 'ch.qos.logback:logback-classic:1.2.6'
+
 }
 
 test {
