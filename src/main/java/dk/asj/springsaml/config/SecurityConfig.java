@@ -20,10 +20,11 @@ public class SecurityConfig {
                                           AuthenticationConverter authenticationConverter,
                                           Saml2MetadataFilter saml2MetadataFilter) throws Exception {
     return http
-      // basic test setup where you can access some endpoints without authentication, and some that require it
+      // basic test setup where you can access some endpoints without authentication, and some that require specific
+      // authorities
       .authorizeRequests(auth -> {
         auth.antMatchers("/").permitAll();
-        auth.antMatchers("/**").authenticated();
+        auth.antMatchers("/**").hasAuthority("ROLE_USER");
       })
 
       // Default .saml2Login() sets loginProcessingUrl: /saml2/authenticate/{registrationId} to support several
